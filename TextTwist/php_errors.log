@@ -1,0 +1,9 @@
+[23-Sep-2018 01:55:36 UTC] PHP Fatal error:  Call to a member function bindParam() on a non-object in /home/ubuntu/workspace/TextTwist/api/Text-Twist.php on line 46
+[23-Sep-2018 01:55:36 UTC] PHP Stack trace:
+[23-Sep-2018 01:55:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/TextTwist/api/Text-Twist.php:0
+[23-Sep-2018 01:56:22 UTC] PHP Fatal error:  Call to a member function bindParam() on a non-object in /home/ubuntu/workspace/TextTwist/api/Text-Twist.php on line 46
+[23-Sep-2018 01:56:22 UTC] PHP Stack trace:
+[23-Sep-2018 01:56:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/TextTwist/api/Text-Twist.php:0
+[23-Sep-2018 01:58:15 UTC] PHP Fatal error:  Call to a member function bindParam() on a non-object in /home/ubuntu/workspace/TextTwist/api/Text-Twist.php on line 46
+[23-Sep-2018 01:58:15 UTC] PHP Stack trace:
+[23-Sep-2018 01:58:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/TextTwist/api/Text-Twist.php:0

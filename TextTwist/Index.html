@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!--<link rel="stylesheet" href="format1.css" type="text/css"/>-->
+<center>
+<h1>Text Twist</h1>
+<h2 id ="rack"></h2>
+<strong>ENTER YOUR ANSWER IN UPPERCASE<br/></strong>
+<input type="text" id="word"  placeholder="Guess Here" />
+<button type="button" id="submit">Submit Guess</button>
+<ul id="messages"> </ul>
+</center>
+
+<script>
+     var words;
+     var guess;
+     var wordsLeft; 
+     var obscure= '*';
+    
+     let loadMessages = function(){                                    
+     var xhr = new XMLHttpRequest();
+     xhr.onload = function() {
+     if (this.status == 200) {
+     let words = (JSON.parse(this.response));                                        ////
+     wordsLeft= words.words.length;
+     let i = 0;
+     let $messageUL=document.getElementById("messages");
+     let $rackUL =document.getElementById("rack");
+     $rackUL.innerHTML='';
+     $messageUL.innerHTML='';
+     let $newRack = document.createElement('h2');
+     $newRack.innerHTML=`<span class="rack"> Rack = ${words.letters}</span>`;
+     $rackUL.appendChild($newRack);
+     for (i=0; i< words.words.length; i++) {                      
+     let $newLi = document.createElement('li');
+     let $newDiv = document.createElement('div');
+     $newDiv.style.borderStyle = "inset";
+     $newDiv.style.backgroundColor="lightblue";
+     $newDiv.style.borderBottom = "30px";
+     $newLi.innerHTML=`<span class="Word" id = ${words.words[i]}>${words.words[i]}</span>`;
+     $newLi.style.visibility = "hidden";
+     $newDiv.appendChild($newLi);
+     $messageUL.appendChild($newDiv);
+     }
+     }
+     };
+     xhr.open("GET", "api/Text-Twist.php");
+     xhr.send();
+     };
+     loadMessages();
+     document.getElementById("submit").addEventListener("click",function(evt){
+    let text=document.getElementById("word").value;
+    let answer = document.getElementById(text);                                                     //44-46: Takes Text input, finds ul element id that equals to text input and makes it visible
+    if(answer != null){
+    answer.style.visibility="visible";
+    wordsLeft--;
+     }});
+</script>
+
+</body>
+</html>
